@@ -51,7 +51,8 @@
     <br />
     Dodaj studenta:<br />
     <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" 
-        DataKeyNames="id" DataSourceID="sdsStudent" Height="50px" Width="125px">
+        DataKeyNames="id" DataSourceID="sdsStudent" Height="50px" Width="125px" 
+        DefaultMode="Insert">
         <Fields>
             <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" 
                 ReadOnly="True" SortExpression="id" />
