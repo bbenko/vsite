@@ -1,0 +1,5 @@
+Nogometna ekipa ima ime, 11 igrača i 7 zamjena.
+Dizajnirati web aplikaciju koja omogućava pregled postave i pojedinog igrača.
+Igrač ima broj, ime i prezime i može igrati u jednoj ekipi.
+Skicirati tablice u bazi, izgled ekrana za pregled, dodavanje, brisanje ekipa i igrača.
+

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+	<h2>Primjer forme</h2>
+	<form method="get" action="obrada.aspx">
+		<p><label for="ime">Ime:</label><input type="text" name="ime" id="ime" value="ime"/></p>
+		<p><label for="prezime">Prezime: </label><input type="text" name="prezime" id="prezime"/></p>
+		<p>Lozinka: <input type="password" name="lozinka" /></p>
+		<p><label for="redovni">Redovni: </label><input type="checkbox" name="redovni" checked="checked" id="redovni" value="1"/></p>
+		<fieldset>
+			<legend>Godina</legend>
+			<p><label for="godina-prva">Prva</label> <input type="radio" name="godina" checked="checked" value="1" id="godina-prva"/></p>
+			<p><label for="godina-druga">Druga</label> <input type="radio" name="godina" value="2" id="godina-druga"/></p>
+			<p><label for="godina-treca">Treca</label> <input type="radio" name="godina" value="3" id="godina-treca"/></p>
+		</fieldset>
+
+		<fieldset>
+			<legend>Spol</legend>
+			<p>Muško <input type="radio" name="spol" checked="checked" value="M"/></p>
+			<p>Žensko <input type="radio" name="spol" value="Z"/></p>
+		</fieldset>
+		<p>
+		<label for="laptop">Laptop:</label>
+			<select name="laptop" id="laptop" size="3">
+				<option value="L">Dell</option>
+				<option value="T">Toshiba</option>
+				<option value="H">HP</option>
+				<option value="A">Acer</option>
+				<option value="J">Apple</option>
+			</select> 
+		</p>
+		<p>
+			<label for="napomena">Napomena:</label>
+		</p>
+		<p>
+			<textarea name="napomena" id="napomena" cols="50" rows="15">Pocetni text.
+				Novi red.
+			</textarea>
+		</p>
+		<p>
+			<input type="submit" value="Pošalji"/> <input type="reset" value="Poništi"/>
+		</p>
+	</form>
+</body>
+</html>
