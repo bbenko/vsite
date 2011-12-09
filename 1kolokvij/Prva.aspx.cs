@@ -5,18 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class BrojiPostBack : System.Web.UI.Page
+public partial class Prva : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        txtStatus.Text = "1";
+        txtBoja.Text = "crvena";
         if (Page.IsPostBack)
-        {
-            ViewState["broj"] = (int)ViewState["broj"] + 1;
-        }
+            Session["X"] = 1;
         else
-        {
-            ViewState["broj"] = 0;
-        }
-        lblBroj.Text = ViewState["broj"].ToString();
+            Session["X"] = 2;
+        Response.Redirect("Druga.aspx?otvori=da");
     }
 }
