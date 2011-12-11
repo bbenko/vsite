@@ -16,12 +16,20 @@ public partial class _Default : System.Web.UI.Page
         SqlCeConnection conn = new SqlCeConnection(connString); // SqlConnection
         conn.Open();
         SqlCeCommand command = new SqlCeCommand("SELECT * FROM student WHERE pbr=@pbr", conn); // ... WHERE pbr=" + pbr.ToString() NE - SQL Injection
-        command.Parameters.AddWithValue("pbr", 10000); // ovako rjestiti i labose sa usernmom i passwordom
+        command.Parameters.AddWithValue("pbr", 100200); // ovako rjestiti i labose sa usernmom i passwordom
 
         SqlCeDataReader dr = command.ExecuteReader();
 
-        //za labose: dr.HasRows
+        // za labose: dr.HasRows
+        // HasRows ne radi na Sql Compact :(
+        // workaround:
+        // bool hasRow = dr.Read();
+        // if (hasRow) {
+        //   napravi nesto
+        // }
+
         txtStudenti.Text = "";
+        
         while (dr.Read())
         {
             txtStudenti.Text += dr[0] + " " +  dr["ime"] + " " + dr["prezime"] + " "+ dr["pbr"] + "\n";
