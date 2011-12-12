@@ -16,7 +16,7 @@ public partial class _Default : System.Web.UI.Page
         SqlCeConnection conn = new SqlCeConnection(connString); // SqlConnection
         conn.Open();
         SqlCeCommand command = new SqlCeCommand("SELECT * FROM student WHERE pbr=@pbr", conn); // ... WHERE pbr=" + pbr.ToString() NE - SQL Injection
-        command.Parameters.AddWithValue("pbr", 100200); // ovako rjestiti i labose sa usernmom i passwordom
+        command.Parameters.AddWithValue("pbr", 10000); // ovako rjestiti i labose sa usernmom i passwordom
 
         SqlCeDataReader dr = command.ExecuteReader();
 
@@ -27,6 +27,12 @@ public partial class _Default : System.Web.UI.Page
         // if (hasRow) {
         //   napravi nesto
         // }
+
+        // ili: (tnx Svjetlana)
+        // SqlCeResultSet rs = command.ExecuteResultSet(ResultSetOptions.Scrollable);
+        // if (dr.HasRows)
+        //     ima rezultata
+
 
         txtStudenti.Text = "";
         
