@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="faksModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="faksModelStoreContainer">
+          <EntitySet Name="mjesto" EntityType="faksModel.Store.mjesto" store:Type="Tables" />
+          <EntitySet Name="student" EntityType="faksModel.Store.student" store:Type="Tables" />
+          <AssociationSet Name="FK_student_mjesto" Association="faksModel.Store.FK_student_mjesto">
+            <End Role="mjesto" EntitySet="mjesto" />
+            <End Role="student" EntitySet="student" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="mjesto">
+          <Key>
+            <PropertyRef Name="pbr" />
+          </Key>
+          <Property Name="pbr" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="nvarchar" MaxLength="100" />
+          <Property Name="prezime" Type="nvarchar" MaxLength="100" />
+          <Property Name="pbr" Type="int" />
+          <Property Name="lozinka" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_student_mjesto">
+          <End Role="mjesto" Type="faksModel.Store.mjesto" Multiplicity="0..1" />
+          <End Role="student" Type="faksModel.Store.student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mjesto">
+              <PropertyRef Name="pbr" />
+            </Principal>
+            <Dependent Role="student">
+              <PropertyRef Name="pbr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="faksModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="faksEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mjesto" EntityType="faksModel.mjesto" />
+          <EntitySet Name="student" EntityType="faksModel.student" />
+          <AssociationSet Name="FK_student_mjesto" Association="faksModel.FK_student_mjesto">
+            <End Role="mjesto" EntitySet="mjesto" />
+            <End Role="student" EntitySet="student" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="mjesto">
+          <Key>
+            <PropertyRef Name="pbr" />
+          </Key>
+          <Property Name="pbr" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="student" Relationship="faksModel.FK_student_mjesto" FromRole="mjesto" ToRole="student" />
+        </EntityType>
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="prezime" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="pbr" Type="Int32" />
+          <Property Name="lozinka" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="mjesto" Relationship="faksModel.FK_student_mjesto" FromRole="student" ToRole="mjesto" />
+        </EntityType>
+        <Association Name="FK_student_mjesto">
+          <End Role="mjesto" Type="faksModel.mjesto" Multiplicity="0..1" />
+          <End Role="student" Type="faksModel.student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mjesto">
+              <PropertyRef Name="pbr" />
+            </Principal>
+            <Dependent Role="student">
+              <PropertyRef Name="pbr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="faksModelStoreContainer" CdmEntityContainer="faksEntities">
+          <EntitySetMapping Name="mjesto"><EntityTypeMapping TypeName="faksModel.mjesto"><MappingFragment StoreEntitySet="mjesto">
+            <ScalarProperty Name="pbr" ColumnName="pbr" />
+            <ScalarProperty Name="naziv" ColumnName="naziv" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="student"><EntityTypeMapping TypeName="faksModel.student"><MappingFragment StoreEntitySet="student">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ime" ColumnName="ime" />
+            <ScalarProperty Name="prezime" ColumnName="prezime" />
+            <ScalarProperty Name="pbr" ColumnName="pbr" />
+            <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="faksModel.mjesto" Width="1.5" PointX="0.75" PointY="1.25" Height="1.5956835937499998" IsExpanded="true" />
+        <EntityTypeShape EntityType="faksModel.student" Width="1.5" PointX="3" PointY="0.875" Height="2.1725878906249996" IsExpanded="true" />
+        <AssociationConnector Association="faksModel.FK_student_mjesto" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.047841796875" />
+          <ConnectorPoint PointX="3" PointY="2.047841796875" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -16,6 +16,7 @@ public partial class Hashevi : System.Web.UI.Page
         string lozinka = "lozinka";
         Random r = new Random(System.DateTime.Now.Millisecond);
 
+        // salt bi mogao biti i veci
         string salt = r.Next().ToString(); // salt se generira za svakog usera i pise se u bazu u isti redak sa hashiranim passwordom
 
         string hashiranaLozinka = Util.SHA256(lozinka);
