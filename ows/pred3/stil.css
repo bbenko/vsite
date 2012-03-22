@@ -1,0 +1,7 @@
+﻿#jos-jedan { color: green}
+p { color: blue;  background-color: #eee }
+div p { color: red; }
+
+p.izracun {color: purple}
+.izracun {color: yellow}
+

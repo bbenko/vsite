@@ -1,0 +1,4 @@
+1. ul li ul li ol li ( 0, 0, 0, 6)
+2. body.ie7 .col_1 h2 span ( 0, 0, 2, 3)
+3. body #content .data img:hover ( 0, 1, 2, 2)
+4. body#starwars #darkside .jedi p ( 0, 2, 1, 2)
