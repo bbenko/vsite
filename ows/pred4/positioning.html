@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>title</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+    
+      /* Ne editiraj ispod ove linije */
+      #dk {
+        border: 1px solid blue;
+      }
+      #dk div {
+        height: 150px;
+        border: 1px solid #222;
+        font-size: 150%;
+        font-weight: bold;
+        opacity: 0.7;
+      }
+      #d1 {
+        background: red;
+      }
+      #d2 {
+        background: yellow;
+      }
+      #d3 {
+        background: lightblue;
+      }
+      /* Ne editiraj iznad ove linije */
+            
+      /**
+       * Tijekom predavanja, copy-pasteat cemo 
+       * svaku od donjih linija CSS u style dio
+       * osvjeziti preglednik i prodiskutirati promjene
+       *
+  	  */
+      #dk div { width: 150px; }
+      #dk div { display: inline; }
+      #dk div { display: block; }
+      #d2 { text-align: center; }
+      #d2 { display: inline; }
+      #dk #d2 { display: inline; }
+      #dk #d2 { display: block; }
+      #dk div { margin: 1em; }
+      #dk div { padding: 10px; }
+      #dk div { border: 2px dotted #000; }
+      #d2 { visibility: hidden; }
+      #d2 { visibility: visible; }
+      #dk #d2 { display: none; }
+      #dk #d2 { display: block; }
+      #d2 { position: absolute; }
+      #d2 { right: 0; }
+      #dk #d2 { margin: 0; }
+      #d2 { top: 20px; }
+      #d2 { bottom: 20px; }
+      #d2 { top: auto; }
+      #d2 { bottom: auto; }
+      #dk #d2 { margin: 1em; }
+      #d2 { position: static; }
+      #d2 { position: relative; }
+      #d3 { position: relative; }
+ 	  
+      /* pozicionira se relativno u odnosu na parenta sa relative, absoulute ili fixed */
+      
+  	  #dk #dd3 {
+          margin: 0px;
+          height: 40px;
+          width: 40px;   
+          padding: 0px;
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+      }
+
+      #d2 { left: 50px; }
+      #d2 { top: 50px; }
+      #d2 { position: static; }
+      #dk div { display: inline; }
+      #dk #d2 { display: inline; }
+      #dk div { float: left; }
+      #dk div { clear: both; }
+    </style>
+  </head>
+  <body>
+    <div id="dk">
+    
+      <div id="d1"><span>1</span></div>
+      
+      <div id="d2"><span>2</span></div>
+      
+      <div id="d3"><div id="dd3">4</div><span>3</span></div>
+      
+    </div>
+    
+    <h1>Ja sam skriveno iznenađenje koje ćete otkomentirati na samom kraju. Prije nego što me otkomentirate, gdje ću se pojaviti?</h1>
+  </body>
+</html>
+
