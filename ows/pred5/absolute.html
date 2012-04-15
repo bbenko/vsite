@@ -1,14 +1,20 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
     <title>title</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <style type="text/css">
-        body  {
+        html, body {
             margin: 0;
             padding: 0;
-        }    
-        div, h2 { 
+			height: 100%; 
+        }
+		
+		#wrap {min-height: 100%;} 
+		#main {overflow:auto; padding-bottom: 150px;}  /* must be same height as the footer */ 
+		
+		
+        div, h2 {
             margin: 0
         }
 
@@ -17,42 +23,51 @@
             height: 100px;
             text-align: center;
 
-        }    
+        }
         #navigacija1 {
             background-color: yellow;
             position: absolute;
             left: 0px;
             top: 100px;
             width: 200px;
-        }    
+        }
         #sadrzaj {
             background-color: orange;
             margin-left: 200px;
             margin-right: 100px;
-        }    
+			
+        }
         #navigacija2 {
             background-color: pink;
             position: absolute;
             right: 0px;
             top: 100px;
             width: 100px;
-        }    
-        #podnozje {
-            background-color: green;
-            position: absolute;
-            bottom:0px;
-            width: 100%;
-        }    
-     
+        }
+
+		
+		#podnozje {
+		background-color: green;
+		position: relative;
+	margin-top: -150px; /* negative value of footer height */
+	height: 150px;
+	clear:both;} 
+		
+		
+  /*M. Šimović*/   
     </style>
   </head>
   <body>
+  <div id="wrap">
     <div id="zaglavlje">
-    	<h2>Ovo je zaglavlje stranice</h2>
+     <h2>Ovo je zaglavlje stranice</h2>
     </div>
+	
+	<div id="main">
+	
     <div id="sadrzaj">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum mauris at nibh sollicitudin tempor. Vestibulum eu erat ut nulla pharetra mattis. Praesent lectus leo, sagittis nec tempus at, laoreet non metus. Nam congue porttitor sollicitudin. Nullam lobortis ante ac erat bibendum sit amet pellentesque augue congue. Sed sollicitudin porttitor odio a ornare. Curabitur ut orci ut ipsum bibendum malesuada. Vestibulum suscipit enim non sapien tempus sed eleifend quam aliquet. Curabitur aliquam lorem ac odio vehicula sit amet tincidunt sapien pulvinar. Etiam in nisl nibh. Vivamus sodales purus at nisl malesuada ornare. Proin a enim mi, eu condimentum ante. Vivamus quis tortor in lacus eleifend vulputate a ac tellus. Etiam sem elit, pharetra in eleifend sed, porttitor eget lorem. Suspendisse dignissim diam ut turpis iaculis vitae vestibulum enim posuere. Morbi id adipiscing massa. Donec massa tellus, mattis non vehicula at, lacinia sit amet enim. Cras malesuada turpis a neque convallis nec lacinia risus lobortis. Nulla est elit, adipiscing nec rhoncus quis, ultrices eu nisi.
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum mauris at nibh sollicitudin tempor. Vestibulum eu erat ut nulla pharetra mattis. Praesent lectus leo, sagittis nec tempus at, laoreet non metus. Nam congue porttitor sollicitudin. Nullam lobortis ante ac erat bibendum sit amet pellentesque augue congue. Sed sollicitudin porttitor odio a ornare. Curabitur ut orci ut ipsum bibendum malesuada. Vestibulum suscipit enim non sapien tempus sed eleifend quam aliquet. Curabitur aliquam lorem ac odio vehicula sit amet tincidunt sapien pulvinar. Etiam in nisl nibh. Vivamus sodales purus at nisl malesuada ornare. Proin a enim mi, eu condimentum ante. Vivamus quis tortor in lacus eleifend vulputate a ac tellus. Etiam sem elit, pharetra in eleifend sed, porttitor eget lorem. Suspendisse dignissim diam ut turpis iaculis vitae vestibulum enim posuere. Morbi id adipiscing massa. Donec massa tellus, mattis non vehicula at, lacinia sit amet enim. Cras malesuada turpis a neque convallis nec lacinia risus lobortis. Nulla est elit, adipiscing nec rhoncus quis, ultrices eu nisi.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum mauris at nibh sollicitudin tempor. Vestibulum eu erat ut nulla pharetra mattis. Praesent lectus leo, sagittis nec tempus at, laoreet non metus. Nam congue porttitor sollicitudin. Nullam lobortis ante ac erat bibendum sit amet pellentesque augue congue. Sed sollicitudin porttitor odio a ornare. Curabitur ut orci ut ipsum bibendum malesuada. Vestibulum suscipit enim non sapien tempus sed eleifend quam aliquet. Curabitur aliquam lorem ac odio vehicula sit amet tincidunt sapien pulvinar. Etiam in nisl nibh. Vivamus sodales purus at nisl malesuada ornare. Proin a enim mi, eu condimentum ante. Vivamus quis tortor in lacus eleifend vulputate a ac tellus. Etiam sem elit, pharetra in eleifend sed, porttitor eget lorem. Suspendisse dignissim diam ut turpis iaculis vitae vestibulum enim posuere. Morbi id adipiscing massa. Donec massa tellus, mattis non vehicula at, lacinia sit amet enim. Cras malesuada turpis a neque convallis nec lacinia risus lobortis. Nulla est elit, adipiscing nec rhoncus quis, ultrices eu nisi.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum mauris at nibh sollicitudin tempor. Vestibulum eu erat ut nulla pharetra mattis. Praesent lectus leo, sagittis nec tempus at, laoreet non metus. Nam congue porttitor sollicitudin. Nullam lobortis ante ac erat bibendum sit amet pellentesque augue congue. Sed sollicitudin porttitor odio a ornare. Curabitur ut orci ut ipsum bibendum malesuada. Vestibulum suscipit enim non sapien tempus sed eleifend quam aliquet. Curabitur aliquam lorem ac odio vehicula sit amet tincidunt sapien pulvinar. Etiam in nisl nibh. Vivamus sodales purus at nisl malesuada ornare. Proin a enim mi, eu condimentum ante. Vivamus quis tortor in lacus eleifend vulputate a ac tellus. Etiam sem elit, pharetra in eleifend sed, porttitor eget lorem. Suspendisse dignissim diam ut turpis iaculis vitae vestibulum enim posuere. Morbi id adipiscing massa. Donec massa tellus, mattis non vehicula at, lacinia sit amet enim. Cras malesuada turpis a neque convallis nec lacinia risus lobortis. Nulla est elit, adipiscing nec rhoncus quis, ultrices eu nisi.
     </div>
     <div id="navigacija1">
         <ul>
@@ -64,18 +79,21 @@
         </ul>
     </div>
     <div id="navigacija2">
-    	<ul>
-    		<li><a href="">Link1</a></li>
-    		<li><a href="">Link2</a></li>
-    		<li><a href="">Link3</a></li>
-    		<li><a href="">Link4</a></li>
-    		<li><a href="">Link5</a></li>
-    	</ul>
+     <ul>
+     <li><a href="">Link1</a></li>
+     <li><a href="">Link2</a></li>
+     <li><a href="">Link3</a></li>
+     <li><a href="">Link4</a></li>
+     <li><a href="">Link5</a></li>
+     </ul>
     </div>
+	</div>
+	</div>
     <div id="podnozje">
-    	<p>Copyright OWS</p>
+     <p>Copyright OWS</p>
     </div>
     
   </body>
 </html>
+
 
