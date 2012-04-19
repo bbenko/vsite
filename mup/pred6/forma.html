@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>Forma</title>
+    </head>
+    <body>
+        <h2>Primjer forme</h2>
+        <form action="obradi.aspx" method="post"> <!-- ili method="get"-->
+            <p>
+                <label for="ime">Ime</label>
+                <input type="text" name="ime" id="ime" value="Upiši ime"/>
+            </p>
+            <p>
+                <label for="prezime">Prezime</label>
+                <input type="text" name="prezime" id="prezime" value=""/>
+            </p>
+            <p>
+                <label for="lozinka">Lozinka</label>
+                <input type="password" name="lozinka" id="lozinka"/>
+            </p>
+            <p>
+                <label for="matematika">Matematika</label>
+                <input type="checkbox" name="matematika" id="matematika" checked="checked"/>
+            </p>
+            <p>
+                <label for="programiranje">Programiranje</label>
+                <input type="checkbox" name="programiranje" id="programiranje"/>
+            </p>
+
+            <h3>Smjer</h3>
+            <p>
+                <label for="baze">Baze</label>
+                <input type="radio" name="smjer" id="smjer-baze" value="baze" checked="checked"/>
+            </p>
+            <p>
+                <label for="mreze">Mreže</label>
+                <input type="radio" name="smjer" id="smjer-mreze"
+                value="mreze"/>
+            </p>
+
+            <h3>Laptop</h3>
+            <p>
+                <label for="dell">Dell</label>
+                <input type="radio" name="laptop" id="laptop-dell" value="1"/>
+            </p>
+            <p>
+                <label for="hp">HP</label>
+                <input type="radio" name="laptop" id="laptop-hp" value="2"/>
+            </p>
+            <p>
+                <label for="acer">Acer</label>
+                <input type="radio" name="laptop" id="laptop-acer" value="3"/>
+            </p>
+
+            <input type="hidden" value="Skrivena vrijedost" id="skriven" name="skriven"/>
+            
+            <h3>Spol</h3>
+            <p>
+                <select name="spol" id="spol">
+                    <option value="Z">Žensko</option>
+                    <option value="M">Muško</option>
+                </select>
+            </p>
+
+            <h3>Državljanstvo</h3>
+            <p>
+                <select name="drzavljanstvo" id="drzavljanstvo" size="4"> <!-- multiple="multiple" -->
+                    <option value="HR">hrvatsko</option>
+                    <option value="SR">srpsko</option>
+                    <option value="SL">slovensko</option>
+                    <option value="NI">nikaragvansko</option>
+                </select>
+            </p>
+
+            <h3>Napomena</h3>
+            <p>
+                <textarea name="napomena" id="napomena" cols="60" rows="10"></textarea>
+            </p>
+
+            <p>
+                <button id="gumbic" name="gumbic">Gumbić</button>
+                <input type="button" value="Nema Submita" name="nema-submita" id="nema-submita"/>
+            </p>
+            <p>
+                <input type="submit" value="Upis" name="upis" id="upis"/>
+                <input type="submit" value="Odjava" name="odjava" id="odjava"/>
+            </p>
+            <p>
+                <input type="reset" value="Pobriši" />
+            </p>
+        </form>
+    </body>
+</html>
