@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	<title>title</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+     <style type="text/css">
+		#navigacija {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			border-bottom: 2px solid #ccc;
+			background: #f9f9f9;
+		}
+		
+		#navigacija ul {
+			list-style: none;
+			margin: 0;
+			padding: 0.3em;
+		}
+		
+		#navigacija li {
+			float: left;
+			margin-right: 5px;
+		}
+		
+		#navigacija li a {
+			background-color: #f9f9f9;
+			border: 1px solid #f9f9f9;
+			padding: 0.5em;
+			display: block;
+		}
+		
+		#navigacija li a:hover {
+			background-color: #333;
+			color: #fff;
+			text-decoration: none;
+		}
+		
+		#navigacija  li ul {
+			display: none;
+			position: absolute;
+			padding: 0;
+		}
+		#navigacija  li:hover ul {
+			display: block;
+		}
+		
+		#navigacija  li li {
+			float: none;
+			border-bottom: 1px solid #ccc;
+		}
+		
+		#navigacija  li li a {
+			border: 0;
+			border-left: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+		}
+	 </style>
+  </head>
+  <body>
+	<div id="navigacija">
+		<ul>
+			<li><a href="/">Naslovnica</a></li>
+			<li>
+				<a href="/">Produkti</a>
+				<ul>
+					<li><a href="#">Coca Cola</a></li>
+					<li><a href="#">Sprite</a></li>
+					<li><a href="#">Cockta</a></li>
+					<li><a href="#">Pepsi</a></li>
+					<li><a href="#">Pipi</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="/">Usluge</a>
+				<ul>
+					<li><a href="#">Dostava</a></li>
+					<li><a href="#">Skladištenje</a></li>
+				</ul>
+			</li>
+			<li><a href="/">O nama</a></li>
+			<li><a href="/">Kontakt</a></li>
+		</ul>
+	</div>
+  </body>
+ </html>
+  
