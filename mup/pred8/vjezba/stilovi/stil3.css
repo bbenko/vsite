@@ -1,0 +1,32 @@
+﻿body {
+	background-color: white;
+}
+
+h1 {
+	color: red;
+	font-size: 30px;
+}
+
+h2 {
+	color: blue;
+	font-size: 20px;
+}
+
+h1, h2 {
+	margin-bottom: 20px;
+
+}
+
+.naglasi {
+	font-weight: bold;
+	font-style: italic;
+}
+
+ul li {
+	font-style: italic;	
+}
+
+.adresa {
+	color: blue;
+	font-weight: bold;
+}

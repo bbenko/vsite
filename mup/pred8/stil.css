@@ -1,0 +1,37 @@
+﻿p {
+    background-color: green;
+}
+
+p.greska {
+    background-color: red;
+}
+
+
+p.upozorenje {
+    background-color: yellow;
+}
+
+.obavijest {
+    background-color: blue;
+}
+
+div#podnozje {
+    background-color: gray;
+}
+
+div#zaglavlje {
+    background-color: orange;
+}
+
+a {
+    color: white;
+    background-color: black;
+}
+
+div#navigacija a {
+    color: yellow;
+}
+
+a:hover {
+    background-color: purple;
+}
