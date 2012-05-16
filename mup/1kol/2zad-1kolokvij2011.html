@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="stilovi/stil.css" />
+        <title>2 zadatak</title>
+    </head>
+    <body>
+        <form action="ispit.php" method="post">
+            <table>
+                <tr>
+                    <td colspan="3">
+                        <a href="http://www.vsite.hr">
+                            <img src="slike/logo.jpg" alt="VSITE" /></a> 
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Pravilno je umjesto oznake <em>&lt;i&gt;</em> koristiti semantičku oznaku <em>&lt;em&gt;</em>.
+                    </td>
+                    <td>
+                        <a href="treci.html">Treći zadatak</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Odgovor</td>
+                    <td><input type="radio" id="oznaka-em" name="oznaka" value="T" />Točno</td>
+                    <td>Ocjena</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="oznaka-i" name="oznaka" value="N" />Netočno</td>
+                    <td>
+                        <select name="ocjena" id="ocjena">
+                            <option value="1">Nedovoljan</option>    
+                            <option value="2">Dovoljan</option>    
+                            <option value="3">Dobar</option>    
+                            <option value="4">Vrlo dobar</option>    
+                            <option value="5">Izvrstan</option>    
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="upisano" name="upisano" checked="ckeched" /> Upisano u indeks
+                    </td>
+                    <td colspan="2">
+                        <p><label for="profesor">Profesor:</label></p>
+                        <p><input type="text" name="profesor" id="profesor" /></p>
+                        <p><input type="submit" value="Ocjeni" /></p>
+
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
