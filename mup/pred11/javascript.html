@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>Vježbanje JS</title>
+	</head>
+	<body>
+    	<h1>Ovo je naslov</h1>
+
+        <script type="text/javascript">
+            var d = new Date(), t;
+            var Dan = d.getDay();
+            switch (Dan) {
+                case 5: t = "Konačno petak";  break;
+                case 6: t = "Savršena subota";  break;
+                case 0: t = "Pospana nedjelja";  break;
+                default: t = "Jedva čekam kraj tjedna!";
+            }
+            document.write(t);
+
+        </script>
+</body>
+</html>
