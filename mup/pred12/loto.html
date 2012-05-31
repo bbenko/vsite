@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+	<head>
+		<title>Predavanje 12</title>
+		<script type="text/javascript">
+			function slucajni(a, b) {
+				return Math.floor(Math.random()*(b-a+1))+a;
+			}
+			function uzl(a, b) {
+				return a-b;
+			}
+			function sil(a, b) {
+				return b-a;
+				//return -uzl(a, b)
+			}
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var brojevi = new Array(7);
+			var broj;
+			var postoji = false;
+
+			for (var i = 0; i < brojevi.length; i++) {
+				do {
+					postoji = false;
+					broj = slucajni(1,39);
+					for (var j=0; j < i; j++)
+						if (broj == brojevi[j]) {
+							postoji = true;
+							break;
+						}
+				} while (postoji);
+				brojevi[i] = broj;
+			}
+			
+			document.write(brojevi + "<br />");
+			document.write(brojevi.sort(uzl) + "<br />");
+			document.write(brojevi.sort(sil) + "<br />");
+
+		</script>
+	</body>
+</html>

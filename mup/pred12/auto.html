@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+	<head>
+		<title>Predavanje 12</title>
+		<script type="text/javascript">
+			function Auto(tip, model, godina) {
+				this.tip=tip;
+				this.godina=godina;
+				this.model=model;
+				this.ispis = function() {
+					return this.tip + " " + this.model + " (" + this.godina + ")";
+				}
+			}
+						
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var mustang = new Auto("Ford", "Mustang", 1967);
+			var ferrari = new Auto("Ferrari", "Enzo", 2005);
+			var audi = new Auto("Audi", "TT", 2006);
+			
+			//document.write(mustang.ispis() + "<br/>");
+			//document.write(ferrari.ispis() + "<br/>");
+			//document.write(audi.ispis() + "<br/>");
+			
+			var auti = new Array();
+			auti[0] = mustang;
+			auti[1] = ferrari;
+			auti[2] = audi;
+			
+			for (var i = 0; i < auti.length; i++) {
+				document.write(auti[i].ispis() + "<br/>");
+			}
+
+		</script>
+	</body>
+</html>
