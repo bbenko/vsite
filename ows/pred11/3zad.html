@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Zad3</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			body, div {margin:0; padding:0}
+			#dk div div {
+				height: 150px;
+				border: 1px solid #222;
+				font-size: 150%;
+				font-weight: bold;
+				background-color: red;
+				width: 150px;
+				display: block;
+				text-align: center;
+			}
+			#dl  div { background-color: blue; }
+			#dd  div { background-color: green; }
+			#dk  #dl { margin-left: 150px; margin-top: 150px; }
+			#d1, #d4 { position: relative; background-color: purple;}
+			#dk  #dd { position: absolute; left: 600px; top: 150px; }
+			#d2, #d5 { position: absolute; left: 150px; top: 0px; 
+			           background-color: orange; }
+			#d3, #d6 { position: static; left: 300px; top: 0px; 
+			           background-color: black; }
+			body div.dc div div {background-color: black;}
+		</style>
+	</head>
+	<body>
+		<div id="dk" class="dc">
+			<div id="dl">
+				<div id="d1">
+					<span>1</span>
+				</div>
+				<div id="d2">
+					<span>2</span>
+				</div>
+				<div id="d3">
+					<span>3</span>
+				</div>
+			</div>
+			<div id="dd">
+				<div id="d4">
+					<span>4</span>
+				</div>
+				<div id="d5">
+					<span>5</span>
+				</div>
+				<div id="d6">
+					<span>6</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+  
