@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+	<head>
+		<title>Validacija</title>
+		<style type="text/css">
+			form span {
+				color: red;
+			}			
+		</style>
+		<script type="text/javascript">
+			function obrisiGreske() {
+				var greske = document.getElementsByTagName("span");
+				for (var i=0; i<greske.length; i++)
+					greske[i].innerHTML = "";
+			}
+
+			function jeHrvSlovo(s) {
+				s=s.toUpperCase(s);
+				if (s >= "A" && s <= "Z")
+					return true;
+				if (s == "Š" || s == "Đ" || s == "Č" || s == "Ć" || s == "Ž")
+					return true;
+				return false;
+			}
+			function validiraj() {
+				var valja = true;
+				//var ime = document.registracija.ime.value; // 1. način
+				//var ime = document.forms[0].ime.value; // 2. način
+				var ime = document.getElementById("ime").value; // 3. način
+				var prezime = document.getElementById("prezime").value; 
+				var lozinka = document.getElementById("lozinka").value; 
+				var lozinka2 = document.getElementById("lozinka2").value; 
+				var ro = document.getElementById("regOznaka").value; 
+
+				obrisiGreske();
+				if (ime == "") {
+					document.getElementById("greskaIme").innerHTML = "* Ime je obavezno";
+					valja = false;
+				}
+				if (prezime == "") {
+					document.getElementById("greskaPrezime").innerHTML = "* Prezime je obavezno.";
+					valja = false;
+				}
+
+				if (lozinka.length < 3) {
+					document.getElementById("greskaLozinka").innerHTML = "* Lozinka mora imati minimalno 3 znaka.";
+					valja = false;
+				}
+
+				if (lozinka != lozinka2) {
+					document.getElementById("greskaLozinka2").innerHTML = "* Lozinke se ne podudaraju.";
+					valja = false;
+				}
+				if (!jeHrvSlovo(ro.charAt(0)) || !jeHrvSlovo(ro.charAt(1))) {
+					document.getElementById("greskaRegOznaka").innerHTML = "* Prva 2 znaka moraju biti slova.";
+					valja = false;
+				}
+				zadnjiMinus = ro.lastIndexOf("-");
+				if (!(zadnjiMinus == 6 || zadnjiMinus == 7)) {
+					document.getElementById("greskaRegOznaka").innerHTML = "* Zadnji minus nije na dobroj poziciji.";
+					valja = false;
+				}
+				if (isNaN(ro.substring(3, zadnjiMinus))) {
+					document.getElementById("greskaRegOznaka").innerHTML = "* Upiši broj u registraciju.";
+					valja = false;
+				}
+
+				prvoSlovoIzaMinusa = ro.charAt(zadnjiMinus + 1);
+				drugoSlovoIzaMinusa = ro.charAt(zadnjiMinus + 2);
+
+				if (!jeHrvSlovo(prvoSlovoIzaMinusa)) {
+					document.getElementById("greskaRegOznaka").innerHTML = "* Upiši slovo iza zadnjeg minusa.";
+					valja = false;					
+				}
+
+				if (drugoSlovoIzaMinusa && !jeHrvSlovo(drugoSlovoIzaMinusa)) {
+					document.getElementById("greskaRegOznaka").innerHTML = "* Upiši drugo slovo iza zadnjeg minusa.";
+					valja = false;					
+				}
+
+				return valja;
+			}
+		</script>
+	</head>
+	<body>
+		<form action="registracija.asp" method="get" name="registracija" onsubmit="return validiraj();">
+			<p>
+				<label for="ime">Ime:</label>
+				<input type="text" id="ime" name="ime" value="Upiši ime" />
+				<span id="greskaIme"></span>
+			</p>
+			<p>
+				<label for="prezime">Prezime:</label>
+				<input type="text" id="prezime" name="prezime" value="Upiši prezime" />
+				<span id="greskaPrezime"></span>
+			</p>
+			<p>
+				<label for="lozinka">Lozinka:</label>
+				<input type="password" id="lozinka" name="lozinka" value="" />
+				<span id="greskaLozinka"></span>
+			</p>
+			<p>
+				<label for="lozinka2">Ponovi lozinku:</label>
+				<input type="password" id="lozinka2" name="lozinka2" value="" />
+				<span id="greskaLozinka2"></span>
+			</p>
+			<p>
+				<label for="regOznaka">Registracijska oznaka:</label>
+				<input type="text" id="regOznaka" name="regOznaka" value="" />
+				<span id="greskaRegOznaka"></span>
+			</p>
+			<p>
+				<input type="submit" name="posalji" value="Pošalji" />
+			</p>
+		</form>
+	</body>
+</html>
