@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<gradovi>
+	<grad>
+		<ime>Zagreb</ime>
+		<drzava>Hrv</drzava>
+		<populacija>900000</populacija>
+		<pbr>10000</pbr>
+		<znamenitosti>
+			<znamenitost>Kamenita vrata</znamenitost>
+			<znamenitost>Medvednica</znamenitost>
+		</znamenitosti>
+	</grad>
+
+	<grad>
+		<ime>Rijeka</ime>
+		<drzava>Hrv</drzava>
+		<populacija>200000</populacija>
+		<pbr>51000</pbr>
+		<znamenitosti>
+			<znamenitost>Grobnik</znamenitost>
+			<znamenitost>Karneval</znamenitost>
+		</znamenitosti>
+	</grad>
+
+	<kod>
+		<![CDATA[
+			if a < b then print "Bravo"
+		]]>
+	</kod>
+
+	<kod>
+		if a &lt; b then print "Bravo"
+	</kod>
+
+</gradovi>

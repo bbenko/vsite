@@ -1,0 +1,18 @@
+﻿{
+	"gradovi" : [
+		{
+			"ime": "Zagreb", 
+			"drzava": "Hrv", 
+			"populacija": 900000, 
+			"pbr": 10000, 
+			"znamenitosti": ["Kamenita vrata", "Medvednica"]
+		},
+		{
+			"ime": "Rijeka", 
+			"drzava": "Hrv", 
+			"populacija": 200000, 
+			"pbr": 51000, 
+			"znamenitosti": ["Grobnik", "Karneval"]
+		}
+	]
+}

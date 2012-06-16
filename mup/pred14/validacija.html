@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+	<head>
+		<title>Zad3 - 2 kol - 2011</title>
+		<style type="text/css">
+			form span {
+				color: red;
+			}			
+		</style>
+		<script type="text/javascript">
+			function obrisiGreske() {
+				var greske = document.getElementsByTagName("span");
+				for (var i=0; i<greske.length; i++)
+					greske[i].innerHTML = "";
+			}
+
+			function validiraj() {
+				var valja = true;
+				//var ime = document.registracija.ime.value; // 1. način
+				//var ime = document.forms[0].ime.value; // 2. način
+				var ime = document.getElementById("ime").value; // 3. način
+				var prezime = document.getElementById("prezime").value; 
+				var oib = document.getElementById("oib").value; 
+
+				obrisiGreske();
+				if (ime.length < 2) {
+					document.getElementById("greskaIme").innerHTML = "* Ime mora imati barem 2 znaka";
+					valja = false;
+				}
+				if (prezime.length < 2) {
+					document.getElementById("greskaPrezime").innerHTML = "* Prezime mora imati barem 2 znaka.";
+					valja = false;
+				}
+
+				if (oib.length != 11) {
+					document.getElementById("greskaOib").innerHTML = "* OIB <strong>mora</strong> imate 11 znamenaka.";
+					valja = false;
+				}
+
+				if (isNaN(oib)) {
+					document.getElementById("greskaOib").innerHTML = "* OIB <strong>mora</strong> sadržavati samo znamenke.";
+					valja = false;
+				}
+
+				zbroj = 10;
+				for (var i = 0; i < 10; i++) {
+					znamenka = parseInt(oib.charAt(i)); // ovdje je bila greška na predavanju; pisalo je charAt[i] umjesto charAt(i)
+					zbroj += znamenka;
+					zbroj %= 10;
+					if (zbroj == 0)
+						zbroj = 10;
+					zbroj *= 2;
+					zbroj %= 11;
+				}
+				if (zbroj == 1)
+					kontrolna = 0;
+				else
+					kontrolna = 11 - zbroj;
+
+				if (oib[10] != kontrolna) {
+					document.getElementById("greskaOib").innerHTML = "* Greška u OIB-u.";
+					valja = false;
+				}
+				return valja;
+			}
+		</script>
+	</head>
+	<body>
+		<form action="provjera_oiba.asp" method="get" name="registracija" onsubmit="return validiraj();">
+			<p>
+				<label for="ime">Ime:</label>
+				<input type="text" id="ime" name="ime" value="" />
+				<span id="greskaIme"></span>
+			</p>
+			<p>
+				<label for="prezime">Prezime:</label>
+				<input type="text" id="prezime" name="prezime" value="" />
+				<span id="greskaPrezime"></span>
+			</p>
+			<p>
+				<label for="oib">OIB:</label>
+				<input type="text" id="oib" name="oib" value="" />
+				<span id="greskaOib"></span>
+			</p>
+			<p>
+				<input type="submit" name="posalji" value="Pošalji" />
+			</p>
+		</form>
+	</body>
+</html>
