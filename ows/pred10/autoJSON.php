@@ -16,7 +16,7 @@
   $rezultat = mysql_query("SELECT * FROM auto WHERE id=" . $id); //podložno sql injectionu
 
   $redak = mysql_fetch_array($rezultat);
-  if (!$redak) 
+  if (!$redak)
   {
     die("Ne postoji taj automobil.");
   }

@@ -22,11 +22,11 @@
   	<form action="bok.php" method="post">
   		<p>
   			<label for="ime">Ime</label>
-  			<input type="text" name="ime" id="ime" />
+  			<input type="text" name="ime" id="id_ime" />
   		</p>
   		<p>
   			<label for="prezime">Prezime</label>
-  			<input type="text" name="prezime" id="prezime" />
+  			<input type="text" name="prezime" id="id_prezime" />
   		</p>
   		<p>
   			<input type="submit" value="Pošalji"/>

@@ -30,7 +30,7 @@
       }
 
       mysql_query("SET NAMES 'utf8'"); //hrv. slova
-      $rezultat = mysql_query("SELECT * FROM auto");
+      $rezultat = mysql_query("SELECT id, naziv, snaga, boja FROM auto");
 
       while ($redak = mysql_fetch_array($rezultat)) {
         echo "<tr>";

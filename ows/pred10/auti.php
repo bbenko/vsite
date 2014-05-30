@@ -15,7 +15,7 @@
               // starije verzije IE-a
               xmlHttp = new ActiveXObject("Msxml12.XMLHTTP");
             } catch (f) {
-              xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")
+              xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
           }
           return xmlHttp;
@@ -39,19 +39,20 @@
           var ajax_load = '<img src="load.gif" alt="učitvam..." />';
           $("#opis").html(ajax_load);
           $.ajax({
-            url: 'autoJSON.php',
+            url: 'autoJSON2.php',
             type: 'GET',
             data: {id: id},
             success: ispisi,
             async: true
-          });          
+          });
         }
+
+
 
         function procesirajRezultat() {
           // console.log(xmlHttp.readyState);
           if (xmlHttp.readyState == 4) {
             ispisi(xmlHttp.responseText);
-
           }
         }
 
@@ -59,6 +60,8 @@
           var auto = eval('(' + poruka + ')');
           document.getElementById("opis").innerHTML = auto.opis;
         }
+
+
     </script>
 
   </head>
